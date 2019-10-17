@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@include file="taglib.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,36 +7,37 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="employee?action=updateEmployee">
+<div align="center">
+<form method="post" action="employee?action=newEmployee">
 <table>
 <tr>
 <td><label for="employeeId">Employee Id:</label></td>
-<td><input type="number" name="employeeId" value="${allemployeesModel.employeeId}" readonly="readonly"/></td>
+<td><input type="number" name="employeeId"/>&nbsp;<label style="color:red"><c:out value="${employeeIderror}"/></label></td>
 </tr>
 
 <tr>
 <td><label for="firstName">First Name:</label></td>
-<td><input type="text" name="firstName" value="${allemployeesModel.firstName}" readonly="readonly"/></td>
+<td><input type="text" name="firstName"/>&nbsp;<label style="color:red"><c:out value="${firstnameerror}"/></label></td>
 </tr>
 
 <tr>
 <td><label for="lastName">Last Name:</label></td>
-<td><input type="text" name="lastName" value="${allemployeesModel.lastName}" readonly="readonly"/></td>
+<td><input type="text" name="lastName"/>&nbsp;<label style="color:red"><c:out value="${lastnameerror}"/></label></td>
 </tr>
 
 <tr>
 <td><label for="email">Email:</label></td>
-<td><input type="email" name="email" value="${allemployeesModel.email}"/>&nbsp;<label style="color:red"><c:out value="${emailerror}"/></label><label style="color:red"><c:out value="${emailexisterror}"/></label></td>
+<td><input type="email" name="email"/>&nbsp;<label style="color:red"><c:out value="${emailerror}"/></label><label style="color:red"><c:out value="${emailexisterror}"/></label></td>
 </tr>
 
 <tr>
 <td><label for="phoneNumber">Phone Number:</label></td>
-<td><input type="text" name="phoneNumber" value="${allemployeesModel.phoneNumber}"/></td>
+<td><input type="text" name="phoneNumber"/></td>
 </tr>
 
 <tr>
 <td><label for="hireDate">Hire Date:</label></td>
-<td><input type="date" name="hireDate" value="${allemployeesModel.hireDate}" readonly="readonly"/></td>
+<td><input type="date" name="hireDate"/></td>
 </tr>
 
 <tr>
@@ -54,13 +54,13 @@
 
 <tr>
 <td><label for="salary">Salary:</label></td>
-<td><input type="number" name="salary" value="${allemployeesModel.salary}"/>&nbsp;<label style="color:red"><c:out value="${salaryerror}"/></label></td>
+<td><input type="number" name="salary"/>&nbsp;<label style="color:red"><c:out value="${salaryerror}"/></label></td>
 </tr>
 
 
 <tr>
 <td><label for="commissionPCT">Commission PCT:</label></td>
-<td><input type="number" name="commissionPCT" step="0.1" value="${allemployeesModel.commissionPCT}"/></td>
+<td><input type="number" name="commissionPCT" step="0.1"/></td>
 </tr>
 
 <tr>
@@ -84,17 +84,12 @@
 </select>
 </td>
 </tr>
-
-
 <tr>
-<td><input type="submit" value="Update" class="button"></td>
+<td><input type="submit" value="Register" class="button"></td>
 <td><input type="reset" value="Cancel" class="button"/></td>
 </tr>
-
-
-
 </table>
 </form>
-</body>
+</div>
 </body>
 </html>
